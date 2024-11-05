@@ -1,0 +1,76 @@
+# Network Simulator TCP Handshake with Router
+
+This document outlines my experience with the network simulator lab, focusing on the TCP Handshake process across networks with a router. The goal was to understand the stages of the TCP Handshake and examine the network log entries as data is transmitted.
+
+## Lab Overview
+
+In this lab, the objective was to:
+1. Deploy the static site associated with the network simulator.
+2. Experiment with sending a **TCP packet** from **Computer 1** to **Computer 3**.
+3. Capture the flag provided by the simulator after sending the packet.
+4. Analyze the **Network Log** to identify the sequence of events and the number of **HANDSHAKE** entries.
+
+**Note**: The lab requires the use of Chrome or Firefox to function correctly.
+
+![Network Simulator Lab - TCP Handshake with Router](./images/network_simulator_tcp_handshake.png)
+
+---
+
+## Steps Taken
+
+### Step 1: Access the Network Simulator
+- Clicked on the "View Site" button to open the network simulator.
+
+### Step 2: Sending a TCP Packet
+- Selected **Computer 1** as the source and **Computer 3** as the destination.
+- Initiated the TCP packet transmission.
+- Observed each step of the packet’s journey through the network, broken down into:
+  - Establishing the connection (Three-Way Handshake)
+  - Packet transmission
+  - Closing the connection
+
+### Step 3: Capture the Flag
+- After successfully completing the TCP Handshake and sending the packet, a flag was revealed by the simulator.
+- **Flag**: `THM{YOU'VE_GOT_DATA}`
+
+### Step 4: Analyzing the Network Log
+- Reviewed the network log entries to understand each part of the TCP Handshake and routing process.
+- **Number of HANDSHAKE entries**: `5`
+
+---
+
+## Network Log Details
+
+Here is a breakdown of the network log entries observed during the simulation:
+
+1. **HANDSHAKE**: Starting TCP/IP Handshake between `computer1` and `computer3`.
+2. **HANDSHAKE**: Sending SYN Packet from `computer1` to `computer3`.
+3. **ROUTING**: `computer1` says `computer3` is not on my local network, sending to gateway: `router`.
+4. **ARP REQUEST**: Who has `router`? Tell `computer1`.
+5. **ARP RESPONSE**: Hey `computer1`, I am `router`.
+6. **ARP REQUEST**: Who has `computer3`? Tell `router`.
+7. **ARP RESPONSE**: Hey `router`, I am `computer3`.
+8. **HANDSHAKE**: `computer3` received SYN Packet from `computer1`, sending SYN/ACK Packet to `computer1`.
+9. **HANDSHAKE**: `computer1` received SYN/ACK Packet from `computer3`, sending ACK packet to `computer3`.
+10. **HANDSHAKE**: `computer3` received ACK packet from `computer1`, Handshake Complete.
+11. **TCP**: Sending TCP packet from `computer1` to `computer3`.
+12. **TCP**: `computer3` received TCP Packet from `computer1`, sending ACK Packet to `computer1`.
+
+---
+
+## Answers to Lab Questions
+
+- **Flag from the Network Simulator**: `THM{YOU'VE_GOT_DATA}`
+- **Number of HANDSHAKE entries**: `5`
+
+---
+
+## Observations
+
+- The network simulator provided a clear breakdown of each step in the TCP packet's transmission, which helped in understanding the Three-Way Handshake process and routing through a gateway.
+- The log entries helped visualize the ARP requests and responses involved in finding the correct route, as well as each handshake step required to establish a TCP connection.
+
+## Conclusion
+
+The network simulator lab was a valuable exercise in visualizing TCP packet transmission, understanding the handshake process, and observing the roles of ARP and routing in network communication.
+
