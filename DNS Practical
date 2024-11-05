@@ -1,0 +1,120 @@
+# DNS Practical Lab Documentation
+
+This lab demonstrates how to use `nslookup` to query different DNS record types, including **CNAME**, **A**, **MX**, and **TXT** records. Here are the commands and expected outputs for each query type.
+
+---
+
+## Prerequisites
+
+- A working terminal (Linux/Mac or Windows with WSL)
+- Basic knowledge of DNS record types
+
+---
+
+## Commands and Examples
+
+### 1. Querying a CNAME Record
+
+To find the CNAME (Canonical Name) record, which points a domain to another domain, use the `nslookup` command with the `--type=CNAME` flag.
+
+**Command:**
+```bash
+nslookup --type=CNAME shop.website.thm
+Expected Output:
+
+yaml
+Copy code
+Server: 127.0.0.53
+Address: 127.0.0.53#53
+
+Non-authoritative answer:
+shop.website.thm canonical name = shops.myshopify.com
+2. Querying an A Record
+The A (Address) record maps a domain name to an IPv4 address. Use nslookup with the --type=A flag.
+
+Command:
+
+bash
+Copy code
+nslookup --type=A website.thm
+Expected Output:
+
+yaml
+Copy code
+Server: 127.0.0.53
+Address: 127.0.0.53#53
+
+Non-authoritative answer:
+Name: website.thm
+Address: 10.10.10.10
+3. Querying an MX Record
+MX (Mail Exchange) records specify the mail servers responsible for receiving email on behalf of the domain. The priority of the mail server is also included.
+
+Command:
+
+bash
+Copy code
+nslookup --type=MX website.thm
+Expected Output:
+
+yaml
+Copy code
+Server: 127.0.0.53
+Address: 127.0.0.53#53
+
+Non-authoritative answer:
+website.thm mail exchanger = 30 alt4.aspmx.l.google.com
+Priority Value: The number before the mail server name (30 in this case) indicates the priority. Lower numbers have higher priority.
+4. Querying a TXT Record
+TXT records contain text information associated with the domain, often used for verification purposes.
+
+Command:
+
+bash
+Copy code
+nslookup --type=TXT website.thm
+Expected Output:
+
+vbnet
+Copy code
+Server: 127.0.0.53
+Address: 127.0.0.53#53
+
+Non-authoritative answer:
+website.thm text = "THM{7012BBA60997F35A9516C2E16D2944FF}"
+TXT Record Value: This example output shows a typical verification token or identifier.
+5. General DNS Lookup
+For a general DNS lookup without specifying the record type, simply use nslookup with the domain name.
+
+Command:
+
+bash
+Copy code
+nslookup website.thm
+Expected Output:
+
+yaml
+Copy code
+Server: 127.0.0.53
+Address: 127.0.0.53#53
+
+Non-authoritative answer:
+Name: website.thm
+Address: 10.10.10.10
+Summary
+In this lab, we covered how to:
+
+Use nslookup to find various DNS records.
+Understand the purpose of CNAME, A, MX, and TXT records.
+Identify the priority in MX records and interpret TXT record values.
+This information is useful for DNS troubleshooting and understanding how domain records work.
+
+arduino
+Copy code
+
+This single code block contains the entire lab documentation in markdown format, ready for your GitHub project.
+
+
+
+
+
