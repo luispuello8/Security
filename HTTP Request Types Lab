@@ -1,0 +1,67 @@
+HTTP Request Types Lab Documentation
+Lab Overview
+This lab is designed to help you understand and interact with different HTTP request methods commonly used in web development. It focuses on the fundamentals of making HTTP requests, including GET, POST, PUT, and DELETE, and understanding how servers respond to these requests. By working through various scenarios, you’ll gain hands-on experience in sending requests, configuring parameters, and analyzing HTTP responses.
+
+Lab Objectives
+The main objectives of this lab are:
+
+To familiarize with different types of HTTP methods and their purposes.
+To learn how to structure HTTP requests and examine the corresponding server responses.
+To understand how HTTP headers, parameters, and response codes work together in client-server communication.
+HTTP Request Types Covered
+This lab covers the following HTTP request methods:
+
+GET: Retrieve data from a server without modifying it.
+POST: Send data to the server, often for authentication or creating new records.
+PUT: Update existing resources on the server.
+DELETE: Remove resources from the server.
+Example Scenarios
+The lab includes interactive tasks where you’ll send requests to specific endpoints and observe the responses from the server. Here’s an overview of each task:
+
+GET Request to /room
+
+Retrieve the content of a specific page.
+Expected Response: Displays a message indicating access to the room page.
+GET Request with Parameters to /blog
+
+Retrieve a specific blog article using a query parameter.
+Expected Response: Displays the content of the specified blog article.
+DELETE Request to /user/1
+
+Delete a resource specified by the endpoint.
+Expected Response: Confirmation of deletion for the specified user.
+PUT Request to /user/2
+
+Update the username for a specified user.
+Expected Response: Confirmation of the updated username.
+POST Request to /login
+
+Submit login credentials for authentication.
+Expected Response: Successful login message.
+How to Use This Lab
+Navigate through the lab tasks to complete each request scenario.
+Enter required parameters using the virtual lab’s interface when prompted.
+Observe HTTP request and response structure in the displayed results to understand how each HTTP method operates.
+Reference the example code provided in each task to learn how to structure similar requests in a real-world environment.
+Screenshots and Examples
+Here are some screenshots from the lab:
+
+GET Request Example
+
+PUT Request Example
+
+DELETE Request Example
+
+Note: Replace path/to/image with actual paths if adding images in GitHub.
+
+Key Learning Points
+Understanding HTTP Methods: Know when to use GET, POST, PUT, and DELETE for different types of interactions with a server.
+Setting Parameters: Learn how to include query strings and body parameters in requests.
+Interpreting HTTP Responses: Recognize HTTP status codes and how they relate to request outcomes (e.g., 200 OK, 404 Not Found).
+Authentication Basics: Experience a simple login mechanism using a POST request.
+Additional Information
+Prerequisites: Basic understanding of web concepts, HTTP/HTTPS, and URLs.
+Tools Used: TryHackMe virtual lab environment with built-in request simulator.
+Summary
+This lab provides a practical introduction to HTTP requests and responses, preparing you for more advanced concepts in web development and cybersecurity. By the end, you’ll be comfortable making different types of HTTP requests and interpreting server responses.
+
